@@ -38,16 +38,20 @@ The application consists of the following 5 components, located in the :
 
 ### Prerequisites
 
-#### If you'd like to skip the account setup steps, you can skip to the "Skip here" header at the end of Step 2 and follow the .env creation steps
+#### If you'd like to skip the account setup steps, you can skip to the "!!! Skip here !!!" header at the end of Step 2 and follow the .env creation steps
 
 1. This project requires a LaunchDarkly trial to use. Visit launchdarkly.com and click "Start Trial" to get started:
 ![Free Trial Screenshot](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-trial.png)
 
-2. Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings, under the "Projects" tab:
+2. For the sake of this tutorial, we will skip the quickstart instructions provided upon login. Navigate to the "Account Settings" Tab at the bottom of the left hand nav:
+
+![Sidebar](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/sidebar.png)
+
+Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings, under the "Projects" tab:
 
 ![Keys](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/keys.png)
 
-#### Skip here
+### !!! Skip here !!!
 
 Once the Client-side ID is copied, you'll need to add a `.env` file to the top level of this project directory, and store the client ID in a variable called `REACT_APP_LAUNCHDARKLY_CLIENTSIDE_ID`. Your .env file should look like this, also note the directory structure on the left-hand side:
 
@@ -55,7 +59,16 @@ Once the Client-side ID is copied, you'll need to add a `.env` file to the top l
 
 To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
 
-3. If you choose to use your personal project, you will need to create one feature flag of each available type, with the following api keys:
+3. Navgate to the "Feature flags" tab at the top of the left hand nav, and click the green "+ FLAG" button on the right hand side:
+
+![create flag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-flag.png)
+
+
+4. You will need to create one feature flag of each available type. You can select the type of flag you want to create from the drop down menu under the "Flag variations" header:
+
+![flag variations](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/flag-variations.png)
+
+Your flags will need to be named as followed:
 
 `boolflag`: A boolean type feature flag
 
@@ -63,7 +76,7 @@ To save yourself time on this step, you can use the Client-side ID for my projec
 
 `stringflag`: A string type feature flag
 
-`jsonflag`: A JSON type feature flag, must contain a `firstName` and `lastName` property. Here's an example: 
+`jsonflag`: A JSON type feature flag, must contain a JSON object with a `firstName` and `lastName` property. Here's an example: 
 ![jsonflag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/jsonflag.png)
 
 Make sure to check the option to make your feature available to SDKs using Client-side ID:
@@ -75,7 +88,7 @@ Make sure to check the option to make your feature available to SDKs using Clien
 ![Dashboard](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/flags-on.png)
 
 
-4. Once these steps are complete, you can start the project from the terminal with the `npm start` command. If everything is configured properly, your app should look like this:
+5. Once these steps are complete, you can start the project from the terminal with the `npm start` command. If everything is configured properly, your app should look like this:
 
 ![App](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/app.png)
 
