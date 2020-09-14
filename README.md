@@ -53,11 +53,11 @@ Your Client-side LaunchDarkly ID must be set as an environment variable to prope
 
 ### !!! Skip here !!!
 
+To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
+
 Once the Client-side ID is copied, you'll need to add a `.env` file to the top level of this project directory, and store the client ID in a variable called `REACT_APP_LAUNCHDARKLY_CLIENTSIDE_ID`. Your .env file should look like this, also note the directory structure on the left-hand side:
 
 ![dotenv](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/dotenv.png)
-
-To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
 
 ### !!! If you used my Client-side ID, skip to step 5 !!!
 
