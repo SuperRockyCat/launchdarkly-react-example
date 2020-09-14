@@ -41,7 +41,7 @@ The application consists of the following 5 components, located in the :
 1. This project requires a LaunchDarkly trial to use. Visit launchdarkly.com and click "Start Trial" to get started:
 ![Free Trial Screenshot](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-trial.png)
 
-2. Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings:
+2. Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings, under the "Projects" tab:
 
 ![Keys](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/keys.png)
 
