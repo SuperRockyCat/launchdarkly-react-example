@@ -38,12 +38,16 @@ The application consists of the following 5 components, located in the :
 
 ### Prerequisites
 
+#### If you'd like to skip the account setup steps, you can skip to the "Skip here" header at the end of Step 2 and follow the .env creation steps
+
 1. This project requires a LaunchDarkly trial to use. Visit launchdarkly.com and click "Start Trial" to get started:
 ![Free Trial Screenshot](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-trial.png)
 
 2. Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings, under the "Projects" tab:
 
 ![Keys](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/keys.png)
+
+#### Skip here
 
 Once the Client-side ID is copied, you'll need to add a `.env` file to the top level of this project directory, and store the client ID in a variable called `REACT_APP_LAUNCHDARKLY_CLIENTSIDE_ID`. Your .env file should look like this, also note the directory structure on the left-hand side:
 
@@ -54,8 +58,11 @@ To save yourself time on this step, you can use the Client-side ID for my projec
 3. If you choose to use your personal project, you will need to create one feature flag of each available type, with the following api keys:
 
 `boolflag`: A boolean type feature flag
+
 `numflag` : A numeric type feature flag
+
 `stringflag`: A string type feature flag
+
 `jsonflag`: A JSON type feature flag, must contain a `firstName` and `lastName` property. Here's an example: 
 ![jsonflag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/jsonflag.png)
 
