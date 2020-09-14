@@ -16,7 +16,7 @@ This repository contains a React application to demonstrate the feature flagging
 
 ### Components
 
-The application consists of the following 5 components, located in the :
+The application consists of the following 5 components, located in the components directory:
 
 1. `App.js`: Provides general structure and layout of application, consisting of a header and multi-celled table.
 
