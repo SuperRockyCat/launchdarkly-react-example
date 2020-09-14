@@ -2,7 +2,7 @@
 
 ## About
 
-This repository contains a React application demonstrate the freature flagging capabilities of the LaunchDarkly continuous delivery tool. It utilizes a few third-party libraries to provide a functional experience:
+This repository contains a React application to demonstrate the feature flagging capabilities of the LaunchDarkly continuous delivery tool. It utilizes a few third-party libraries to provide a functional experience:
 
 1. [Create React App](https://github.com/facebook/create-react-app): Used to generate boilerplate React code to quickstart project.
 
