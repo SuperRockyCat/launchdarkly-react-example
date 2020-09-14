@@ -59,6 +59,8 @@ Once the Client-side ID is copied, you'll need to add a `.env` file to the top l
 
 To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
 
+### !!! If you used my Client-side ID, skip to step 5 !!!
+
 3. Navigate to the "Feature flags" tab at the top of the left hand nav, and click the green "+ FLAG" button on the right hand side:
 
 ![create flag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-flag.png)
