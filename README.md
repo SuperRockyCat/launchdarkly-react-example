@@ -70,7 +70,9 @@ Make sure to check the option to make your feature available to SDKs using Clien
 
 ![Client-side ID](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/client-side-id.png)
 
-Once created, make sure to turn your flags ON in production, and configure any default flag rules.
+#### Once created, make sure to turn your flags ON in production, and configure any default flag rules:
+
+![Dashboard](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/flags-on.png)
 
 
 4. Once these steps are complete, you can start the project from the terminal with the `npm start` command. If everything is configured properly, your app should look like this:
