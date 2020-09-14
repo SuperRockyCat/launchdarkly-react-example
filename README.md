@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LaunchDarkly React Sample App
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+This repository contains a React application demonstrate the freature flagging capabilities of the LaunchDarkly continuous delivery tool. It utilizes a few third-party libraries to provide a functional experience:
 
-### `npm start`
+1. [Create React App](https://github.com/facebook/create-react-app): Used to generate boilerplate React code to quickstart project.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. [Faker.js](https://github.com/marak/Faker.js/): Fake data API, used to randomize users for feature flag evaluations.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+3. [uuid](https://www.npmjs.com/package/uuid): Used to generate unique user IDs.
 
-### `npm test`
+4. [LaunchDarkly React SDK](https://github.com/launchdarkly/react-client-sdk): Used to remotely configure feature flag states.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. [Semantic UI](https://semantic-ui.com/): CSS library used to provide general UI styling.
 
-### `npm run build`
+### Components
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application consists of the following 5 components, located in the :
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. `App.js`: Provides general structure and layout of application, consisting of a header and multi-celled table.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. `BoolFlag.js`: Contains a React component for a Boolean feature flag. Conditionally returns "True" when flag is enabled, and "False" when flag is disabled.
 
-### `npm run eject`
+3. `JsonFlag.js`: Contains a React component for a JSON feature flag. Returns a template literal string which accesses the `firstName` and `lastName` properties provided by the feature flag JSON.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. `NumFlag.js`: Contains a React component for a Numeric feature flag. Returns a number if the feature is defined, or the string "Not Defined" if the feature is not defined.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. `StringFlag.js`: Contains a React component for a String feature flag. Returns a string if the flag is on, otherwise returns "Flag Off".
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Using this project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. In the terminal, clone this repo to your local machine  with the command: `git clone https://github.com/SuperRockyCat/launchdarkly-react-example.git`
 
-## Learn More
+2. In the same terminal session, run the following command: `cd launchdarkly-react-example && npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. This project requires a LaunchDarkly trial to use. Visit launchdarkly.com and click "Start Trial" to get started:
+![Free Trial Screenshot](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-trial.png)
 
-### Code Splitting
+2. Your Client-side LaunchDarkly ID must be set as an environment variable to properly initialize the LaunchDarkly React client. This can be found in your newly created account under account settings:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![Keys](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/keys.png)
 
-### Analyzing the Bundle Size
+Once the Client-side ID is copied, you'll need to add a `.env` file to the top level of this project directory, and store the client ID in a variable called `REACT_APP_LAUNCHDARKLY_CLIENTSIDE_ID`. Your .env file should look like this, also note the directory structure on the left-hand side:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![dotenv](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/dotenv.png)
 
-### Making a Progressive Web App
+To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+3. If you choose to use your personal project, you will need to create one feature flag of each available type, with the following api keys:
 
-### Advanced Configuration
+`boolflag`: A boolean type feature flag
+`numflag` : A numeric type feature flag
+`stringflag`: A string type feature flag
+`jsonflag`: A JSON type feature flag, must contain a `firstName` and `lastName` property. Here's an example: 
+![jsonflag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/jsonflag.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Make sure to check the option to make your feature available to SDKs using Client-side ID:
 
-### Deployment
+![Client-side ID](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/client-side-id.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Once created, make sure to turn your flags ON in production, and configure any default flag rules.
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+4. Once these steps are complete, you can start the project from the terminal with the `npm start` command. If everything is configured properly, your app should look like this:
+
+![App](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/app.png)
+
+## Behavior
+
+If you configure your flags to have variations and use a percentage rollout for the JSON, String, and Numeric flag types, like so:
+
+![Percentage Rollout](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/perc-rollout.png)
+
+You should see a random variation each time you reload the app in the browser. The app is designed to provide a random user each time the browser is reloaded. This is meant to demonstrate how different feature configurations can be given to different users.
