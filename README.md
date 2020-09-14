@@ -59,7 +59,7 @@ Once the Client-side ID is copied, you'll need to add a `.env` file to the top l
 
 To save yourself time on this step, you can use the Client-side ID for my project `5f5e5d91f5d1ac0a4d464b34`
 
-3. Navgate to the "Feature flags" tab at the top of the left hand nav, and click the green "+ FLAG" button on the right hand side:
+3. Navigate to the "Feature flags" tab at the top of the left hand nav, and click the green "+ FLAG" button on the right hand side:
 
 ![create flag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/create-flag.png)
 
@@ -77,6 +77,7 @@ Your flags will need to be named as followed:
 `stringflag`: A string type feature flag
 
 `jsonflag`: A JSON type feature flag, must contain a JSON object with a `firstName` and `lastName` property. Here's an example: 
+
 ![jsonflag](https://raw.githubusercontent.com/SuperRockyCat/launchdarkly-react-example/master/screenshots/jsonflag.png)
 
 Make sure to check the option to make your feature available to SDKs using Client-side ID:
