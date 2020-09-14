@@ -34,6 +34,8 @@ The application consists of the following 5 components, located in the :
 
 2. In the same terminal session, run the following command: `cd launchdarkly-react-example && npm install`
 
+3. Follow the steps in prerequisites to get your app properly configured
+
 ### Prerequisites
 
 1. This project requires a LaunchDarkly trial to use. Visit launchdarkly.com and click "Start Trial" to get started:
