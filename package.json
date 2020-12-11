@@ -10,7 +10,7 @@
     "launchdarkly-react-client-sdk": "^2.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "uuid": "^8.3.0"
   },
   "scripts": {
